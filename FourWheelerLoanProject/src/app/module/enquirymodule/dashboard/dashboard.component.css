@@ -1,0 +1,40 @@
+table.table-bordered{
+    border:2px solid black;
+    margin-top:20px;
+  }
+table.table-bordered > thead > tr > th{
+    border:1px solid black;
+}
+table.table-bordered > tbody > tr > td{
+    border:1px solid black;
+}
+
+th {
+    background-color:darksalmon;
+    color:black;
+  }
+  
+  
+
+  #denquiry tr:nth-child(odd){background-color:navajowhite;}
+  #denquiry tr:nth-child(even){background-color:lightcyan;}
+  a:link, a:visited {
+    background-color:lightcoral;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color:black;
+  }
+  
+  a:hover, a:active {
+    background-color:darkcyan;
+  }
+  h3{
+    text-decoration: underline;    
+  }
+  .header{
+    text-align: center;
+    
+}

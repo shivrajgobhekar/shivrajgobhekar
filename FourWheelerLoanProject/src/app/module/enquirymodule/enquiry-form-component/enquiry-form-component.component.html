@@ -1,0 +1,159 @@
+     <form [formGroup]="NewEnquiryForm" (ngSubmit)='submitData()'>
+        <div class="header"> <h3>Customer Enquiry Form</h3>
+        </div>
+    
+      <div class="container">
+        <label for="cname"><b>Customer Name</b></label>
+        <input type="text" placeholder="Enter Customer Name" formControlName="cname" required>
+
+        <label for="enquiryCustomerMobileNO"><b>Customer Mobile Number</b></label>
+        <input type="text" placeholder="Enter Customer MobileNO"formControlName="mobileNo"required><br><br>
+
+        <div class="row">
+            <div class="col-md-6">
+        <label for="enquiryCustomerEmailId"><b>Customer Email Id : </b></label>
+        <input type="email" placeholder="Enter Customer EmailId" formControlName="emailid" required>
+        </div>
+        <div class="col-md-6">
+        <label for="enquiryCustomerDob"><b>Customer DOB : </b></label>
+        <input type="date" placeholder="Enter enquiryCustomerDob" formControlName="customerdob" required></div>
+        </div>
+       
+        <div formGroupName="localAddress">
+            <h4>Address Details :</h4>
+            <h6 ><b>Local Address :</b></h6>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="areaname"><b>Areaname </b></label>
+            <input type="text" placeholder="Enter area name" formControlName="areaname" required>
+        
+                </div>
+                <div class="col-md-6"> 
+                    <label for="cityname"><b>City Name</b></label>
+            <input type="text" placeholder="Enter cityname" formControlName="cityname" required>
+                </div></div>
+                <label for="pincode"><b>Pincode</b></label>
+                <input type="text" placeholder="Enter pincode" formControlName="pincode" required>
+                
+        <div formGroupName="district">
+        <label for="district"><b>District</b></label>
+        <div class="col-md-12 selectContainer">
+            <select  class="form-control selectpicker"  formControlName="districtname" >
+              <option value="">Select District</option>
+              <option >Amravati</option>
+              <option >Ahemdabad</option>
+              <option>Hyderabad</option>
+              <option >Nagpur</option>
+              <option >Pune</option>
+              <option >Mumbai</option>
+              <option >Chennai</option>
+              <option >Hyderabad</option>  
+            </select>
+          </div>
+        
+          <div formGroupName="state">
+            <label for="state"><b>State</b></label>
+              <div class="col-md-12 selectContainer">
+              <select  class="form-control selectpicker"  formControlName="statename" >
+                <option value="">Select State</option>
+                <option>Arunachal Pradesh</option>
+                <option >Andhra Pradesh</option>
+                <option >Delhi</option>
+                <option >Maharashtra</option>
+                <option >Gujrat</option>
+                <option >Goa</option>
+              </select>
+            </div>
+          </div>
+          </div>
+          </div>
+          <br>
+          <input type="checkbox" (click)='sameData($event)'><b>Local Address Same as Permanent Address </b>
+          <br><br>
+          <div formGroupName="permanentAddress">
+            <h6 ><b>Permanent Address :</b></h6>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="areaname"><b>Areaname </b></label>
+            <input type="text" placeholder="Enter area name" formControlName="areaname" required>
+        
+                </div>
+                <div class="col-md-6"> 
+                    <label for="cityname"><b>City Name</b></label>
+            <input type="text" placeholder="Enter cityname" formControlName="cityname" required>
+                </div></div>
+                <label for="pincode"><b>Pincode</b></label>
+                <input type="text" placeholder="Enter pincode" formControlName="pincode" required>
+                
+        <div formGroupName="district">
+        <label for="district"><b>District</b></label>
+        <div class="col-md-12 selectContainer">
+            <select  class="form-control selectpicker"  formControlName="districtname" >
+              <option value="">Select District</option>
+              <option >Ahemdabad</option>
+              <option >Amravati</option>
+              <option>Hyderabad</option>
+              <option >Nagpur</option>
+              <option >Pune</option>
+              <option >Mumbai</option>
+              <option >Chennai</option>
+              <option >Hyderabad</option>  
+            </select>
+          </div>
+        
+          <div formGroupName="state">
+            <label for="state"><b>State</b></label>
+              <div class="col-md-12 selectContainer">
+              <select  class="form-control selectpicker"  formControlName="statename" >
+                <option value="">Select State</option>
+                <option>Arunachal Pradesh</option>
+                <option >Andhra Pradesh</option>
+                <option >Delhi</option>
+                <option >Maharashtra</option>
+                <option >Gujrat</option>
+                <option >Goa</option>
+              </select>
+            </div>
+          </div>
+          </div>
+          </div>
+        <br>
+    
+        <label for="adharNo"><b>Customer Aadhar Number</b></label>
+        <input type="text" placeholder="Enter Uid" formControlName="adharNo" required>
+
+        <label for="panNo"><b>Customer PanNo</b></label>
+        <input type="text" placeholder="Enter PanNo" formControlName="panNo" required>
+
+        <div formGroupName="occupationId">
+        <label for="occType"><b>Customer Occupation Type</b></label>
+        <input type="text" placeholder="ex: private,self-Employeed,Govt.servent" formControlName="occType" required>
+
+        <label for="occDiscription"><b>Customer Occupation Discription</b></label>
+        <input type="text" placeholder="Enter occupation " formControlName="occDiscription" required>
+        </div>
+
+        <label for="customerYearlyIncome"><b>Customer Yearly Income</b></label>
+        <input type="text" placeholder="Enter YearlyIncome" formControlName="customerYearlyIncome" required>
+
+        
+        <b><label class="col-md-5 control-label">Cibil Status</label></b>
+          <div class="col-md-5 selectContainer">
+          <select  class="form-control selectpicker"  formControlName="cibilStatus">
+            <option value="">Select Status</option>
+            <option>Active</option>
+            <option >Inactive</option>
+            <option >Pending</option>
+            <option >Rejected</option>
+            <option >Approved</option>
+          </select>
+        </div><br>
+
+         <button type="submit" class="btn btn-success" >Submit</button> 
+       <span class="re"> <button type="reset" class="btn btn-warning">Reset</button></span>
+      </div>
+    </form>
+    
+    <br><br> 
+
+

@@ -1,0 +1,66 @@
+<form [formGroup]="cibilForm" (ngSubmit)="onSubmit()">
+    <div class="header"> <h3><b>Cibil Generation Form</b></h3>
+    </div>
+
+  <div class="container">
+    <label for="cibilId"><b>Cibil Id</b></label>
+    <input type="text" class="form-control" placeholder="Enter Cibil Id *" formControlName="cibilId" value="" />
+
+    <div class="form-group"></div> 
+    <b><label class="col-md-5 control-label">Customer UID Status</label></b>
+      <div class="col-md-5 selectContainer">
+      <select  class="form-control selectpicker"  formControlName="uidStatus">
+        <option value="">Select UID Status</option>
+        <option>Active</option>
+        <option >Inactive</option>
+      </select>
+    </div><br>
+
+    <div class="form-group"></div> 
+    <b><label class="col-md-5 control-label">Customer PAN Status</label></b>
+      <div class="col-md-5 selectContainer">
+      <select  class="form-control selectpicker"  formControlName="panStatus">
+        <option value="">Select PAN Status</option>
+        <option>Active</option>
+        <option >Inactive</option>
+      </select>
+    </div><br>
+
+    <label for="cibilScore"><b>Cibil Score</b></label>
+    <input type="text" class="form-control"  placeholder="Cibil Score"  formControlName="cibilScore" [ngModel]="cibilScore" [ngModelOptions]="{standalone: true}"  />
+
+    <label for="cibilGeneratedDate"><b>Cibil Generation Date</b></label>
+    <input type="date" class="form-control" formControlName="cibilGeneratedDate"  value="" />
+
+    <div class="form-group"></div> 
+    <b><label class="col-md-5 control-label">Cibil Status</label></b>
+      <div class="col-md-5 selectContainer">
+      <select  class="form-control selectpicker" formControlName="cibilStatus">
+        <option value="">Select Cibil Status</option>
+        <option>Active</option>
+        <option >Inactive</option>
+        <option >Pending</option>
+      </select>
+    </div><br>
+
+    <label for="enquiryCustomerPanNo"><b>Customer PanCard No.</b></label>
+    <input type="text" disabled  placeholder="Pan No" class="form-control" [ngModel]="enqService.enquiry.panNo"  [ngModelOptions]="{standalone: true}" />
+
+    <label for="cibilGeneratedBy"><b>Cibil Genereted By</b></label>
+    <input type="text" class="form-control" placeholder="Cibil Genereted By" formControlName="cibilGeneratedBy" value="" />
+
+    <label for="cmRemark"><b>CM Remark</b></label>
+    <input type="text" class="form-control" placeholder="CM Remark" formControlName="cmRemark" value="" />
+
+     <button type="button" class="btn btn-info" (click)="generateCibil()">Calculate Cibil</button>
+    <h3 [ngStyle]="getBackground(cibil)" *ngIf='checkCibilScore'><b>{{msgCibil()}}</b></h3>
+
+
+     <button type="submit" class="btn btn-success">Submit</button> 
+
+      <button type="button" class="btn btn-warning"  (click)="getback()">Back</button>  
+      <!-- <button type="button" class="btn btn-info"  (click)="getMail(s.c)">Send Email</button>   -->
+
+
+  </div>
+</form>

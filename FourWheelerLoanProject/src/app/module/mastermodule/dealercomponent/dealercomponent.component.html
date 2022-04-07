@@ -1,0 +1,233 @@
+    
+    <form  [formGroup]="dealerRegForm" (ngSubmit)="onSubmit()">
+        <div class="header"> <h3><b>Dealer Details Form</b></h3>
+        </div>
+    
+      <div class="container">
+
+        <label for="dName"><b>Name</b></label>
+        <input type="text" placeholder="Enter dealer Name" formControlName="dname"  required>
+    
+        <label for="dDob"><b> DOB</b></label><br>
+        <input type="date" placeholder="Enter dealer DOB" formControlName="dDob" required><br>
+
+        <label for="demailId"><b> EmailId</b></label>
+        <input type="text" placeholder="Enter dealer EmailId" formControlName="demailId"  required>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label for="dMobileno"><b> MobileNo</b></label>
+              <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="Enter dealer Mobileno" formControlName="dMobileno"  required/>
+             
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label for="dAdharNo"><b>AdharNo</b></label>
+              <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Enter dealer AdharNo" formControlName="dAdharNo" required/>
+              
+            </div>
+          </div>
+        </div>
+        
+
+        <div formGroupName="dLocalAddress">
+        <label for="areaname"> <h6 ><b>Local Address :</b></h6></label><br>
+        
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label for="areaname"><b>Areaname</b></label>
+              <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="Enter Areaname" formControlName="areaname" required />
+             
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label for="cityname"><b> Cityname</b></label>
+              <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Enter Cityname" formControlName="cityname" required />
+              
+            </div>
+          </div>
+        </div>
+       
+        <label for="pincode"><b>Pincode</b></label>
+        <input type="text" placeholder="Enter pincode" formControlName="pincode" required>
+
+         <div formGroupName="district">
+          <label for="districtname"><b>District</b></label>
+        <!-- <input type="text" placeholder="Enter District" formControlName="districtname" required> -->
+        <div class="col-md-12 selectContainer">
+          <select  class="form-control selectpicker"  formControlName="districtname" >
+            <option value="">Select District</option>
+            <option >Ahemdabad</option>
+            <option >Amravati</option>
+            <option>Hyderabad</option>
+            <option >Nagpur</option>
+            <option >Pune</option>
+            <option >Mumbai</option>
+            <option >Chennai</option>
+            <option >Hyderabad</option>  
+          </select>
+        </div>
+      
+       
+        <div formGroupName="state">
+        <label for="statename"><b>State</b></label>
+        <div class="col-md-12 selectContainer">
+          <select  class="form-control selectpicker"  formControlName="statename" >
+            <option value="">Select State</option>
+            <option>Arunachal Pradesh</option>
+            <option >Andhra Pradesh</option>
+            <option >Delhi</option>
+            <option >Maharashtra</option>
+            <option >Gujrat</option>
+            <option >Goa</option>
+          </select>
+        </div>
+
+      </div>
+      </div>
+</div>
+<input type="checkbox" (click)='sameData($event)'><b>Local Address Same as Permanent Address </b>
+  <br><br>
+      <div formGroupName="dPermanentAddress">
+        <label for="areaname"><h6><b>Permanent Address ::</b></h6></label><br>
+
+        <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="form-outline">
+          <label for="areaname"><b>Areaname</b></label>
+          <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="Enter Areaname" formControlName="areaname" required />
+         
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="form-outline">
+          <label for="cityname"><b> Cityname</b></label>
+          <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Enter Cityname" formControlName="cityname" required />
+          
+        </div>
+      </div>
+    </div>
+
+        <label for="pincode"><b>Pincode</b></label>
+        <input type="text" placeholder="Enter pincode" formControlName="pincode" required>
+
+         <div formGroupName="district">
+          <label for="districtname"><b>District</b></label>
+        <!-- <input type="text" placeholder="Enter District" formControlName="districtname" required> -->
+        <div class="col-md-12 selectContainer">
+          <select  class="form-control selectpicker"  formControlName="districtname" >
+            <option value="">Select District</option>
+            <option >Ahemdabad</option>
+            <option >Amravati</option>
+            <option>Hyderabad</option>
+            <option >Nagpur</option>
+            <option >Pune</option>
+            <option >Mumbai</option>
+            <option >Chennai</option>
+            <option >Hyderabad</option>  
+          </select>
+        </div>
+      
+
+
+
+
+
+
+        <div formGroupName="state">
+        <label for="statename"><b>State</b></label>
+        <!-- <input type="text" placeholder="Enter State" formControlName="statename" required> -->
+        <div class="col-md-12 selectContainer">
+          <select  class="form-control selectpicker"  formControlName="statename" >
+            <option value="">Select State</option>
+            <option>Arunachal Pradesh</option>
+            <option >Andhra Pradesh</option>
+            <option >Delhi</option>
+            <option >Maharashtra</option>
+            <option >Gujrat</option>
+            <option >Goa</option>
+          </select>
+        </div>
+
+
+
+
+
+
+
+      </div>
+      </div>
+  </div>
+
+
+  <div formGroupName="dBankDetails">
+  <label><h6><b>Bank Details ::</b></h6></label><br>
+  <label for="bankName"><b> BankName</b></label>
+  <input type="text" placeholder="Enter BankName" formControlName="bankName" required>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="form-outline">
+        <label for="accountno"><b>Bank AccountNo.</b></label>
+        <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="Enter dealer AccountNo" formControlName="accountno" required/>
+       
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="form-outline">
+        <label for="accounttype"><b>AccountType</b></label>
+        <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Enter AccountType" formControlName="accounttype"  required/>
+        
+      </div>
+    </div>
+  </div>
+
+  
+ 
+  
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="form-outline">
+        <label for="ifscCode"><b>IFSC Code</b></label>
+        <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="Enter IFSCCode" formControlName="ifscCode" required/>
+       
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="form-outline">
+        <label for="micrCode"><b>MICR Code</b></label>
+        <input type="text" id="form3Example1n" class="form-control form-control-lg" placeholder="Enter micrCode" formControlName="micrCode" required/>
+        
+      </div>
+    </div>
+  </div>
+
+  <label><h6><b>Branch Details ::</b></h6></label><br>
+    
+ <div formArrayName="branchId">
+ <div *ngFor="let group of dealerRegForm.controls.dBankDetails.controls.branchId.controls; let i=index;" [formGroupName]="i" >
+  <!-- <div *ngFor="let group of employeeDetailsForm.controls.bankDetails.controls.branchId.controls; let i=index;" [formGroupName]="i" > -->
+    <label for="branchName"><b>Branch Name</b></label>
+    <input type="text" placeholder="Enter branchName" formControlName="branchName" required>
+
+    <label for="branchCode"><b>Branch Code</b></label>
+    <input type="text" placeholder="Enter branchCode" formControlName="branchCode" required>
+
+    <label for="branchAddr"><b>Branch Address</b></label>
+    <input type="text" placeholder="Enter branchCode" formControlName="branchAddr" required>
+    </div> 
+  </div>
+
+</div>
+
+
+         <button type="submit" class="btn btn-success">Submit</button> 
+       <span class="re"> <button type="reset" class="btn btn-warning">Reset</button></span>
+      </div>
+    </form>
+    
+    <br><br>

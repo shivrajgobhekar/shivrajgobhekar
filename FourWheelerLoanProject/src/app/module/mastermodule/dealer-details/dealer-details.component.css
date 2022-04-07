@@ -1,0 +1,22 @@
+p{
+    text-align: center;
+    color: blueviolet;
+}
+
+button{
+    background-color:lightcoral;
+    width:30%;
+}
+h3{
+    text-decoration: underline;    
+  }
+  .header{
+    text-align: center;
+    
+}
+th {
+    background-color:darksalmon;
+    color:black;
+  }
+  #details tr:nth-child(odd){background-color:navajowhite;}
+  #details  tr:nth-child(even){background-color:lightcyan;}

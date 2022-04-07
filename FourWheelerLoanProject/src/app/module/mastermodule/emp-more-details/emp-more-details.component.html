@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="header"> <h3><b>Employee More Details</b></h3>
+  </div>
+      <table  class="table table-success table-striped" style="width: 100%; " id="edetails" >
+  <thead>
+      <tr>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Mobile Number</th>
+          <th>Email Id</th>
+          <th>Role</th>
+          <th>Local Address</th>
+          <th>Permanent Address</th>
+
+          <th>Bank Id</th>
+          <th>Bank Name</th>
+          <th>Account No</th>
+          <th>Account Type</th>
+          <th>Ifsc Code</th>
+          <th>Micr COde</th>
+          <th>Branch Id</th>
+          <th>Branch Name</th>
+          <th>Branch Address</th>
+          <th>Branch Code</th>     
+      </tr>
+  </thead>
+  
+        <tbody>
+          <tr>
+            <td>{{emp1.eid}}</td>
+            <td>{{emp1.ename}}</td>
+            <td> {{emp1.empUsername}} </td>
+              <td> {{emp1.empPassword}} </td>
+              <td> {{emp1.mobNo}} </td>
+              <td>{{emp1.emailid}}  </td>
+              <td> {{emp1.role}}</td>
+              <td> 
+            <div>
+                {{emp1.localaddress.aid}}<br>
+                {{emp1.localaddress.areaname}}<br>
+                {{emp1.localaddress.cityname}}<br>
+                {{emp1.localaddress.pincode}}<br>
+                {{emp1.localaddress.district.districtname}}<br>
+                {{emp1.localaddress.district.state.statename}}<br>
+            </div>      
+            </td>
+              <td> 
+                <div>
+                    {{emp1.permanentaddress.aid}}<br>
+                    {{emp1.permanentaddress.areaname}}<br>
+                    {{emp1.permanentaddress.cityname}}<br>
+                    {{emp1.localaddress.pincode}}<br>
+                    {{emp1.permanentaddress.district.districtname}}<br>
+                    {{emp1.permanentaddress.district.state.statename}}<br>
+                </div>       
+            </td>
+
+               <td> {{emp1.bankDetails.bankId}} </td>
+              <td> {{emp1.bankDetails.bankName}} </td>
+              <td> {{emp1.bankDetails.accountno}} </td>
+              <td> {{emp1.bankDetails.accounttype}} </td>
+              <td> {{emp1.bankDetails.ifscCode}} </td>
+              <td> {{emp1.bankDetails.micrCode}} </td>
+              
+               <td *ngFor="let b of emp1.bankDetails.branchId"> {{b.branchId}} </td>
+              <td *ngFor="let b of emp1.bankDetails.branchId"> {{b.branchName}} </td>
+              <td *ngFor="let b of emp1.bankDetails.branchId"> {{b.branchAddr}} </td>
+              <td *ngFor="let b of emp1.bankDetails.branchId"> {{b.branchCode}} </td>
+              
+            </tr> 
+        </tbody>
+      </table>
+    </div> 
+    <p ><button (click)='getBack()'>Back</button></p>
+  <br><br> 

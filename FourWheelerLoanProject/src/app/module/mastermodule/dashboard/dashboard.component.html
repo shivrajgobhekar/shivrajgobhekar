@@ -1,0 +1,173 @@
+<div class="container">
+  <div class="header"> <h3><b>Employees Details</b></h3>
+    </div>
+    
+      <table class="table table-success table-striped" style="width: 100%; " id="dashbord"  >
+  <thead>
+      <tr>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Mobile Number</th>
+          <th>Email Id</th>
+          <th>Role</th>
+          <th>More Details</th>
+          <!-- <th>Local Address</th>
+          <th>Permanent Address</th>
+          
+          <th>Bank Id</th>
+          <th>Bank Name</th>
+          <th>Account No</th>
+          <th>Account Type</th>
+          <th>Ifsc Code</th>
+          <th>Micr COde</th>
+          <th>Branch Id</th>
+          <th>Branch Name</th>
+          <th>Branch Address</th>
+          <th>Branch Code</th>      -->
+      </tr>
+  </thead>
+  
+        <tbody>
+          <tr *ngFor='let e of emplist|paginate:{itemsPerPage:count,currentPage:p} '>
+            <td>{{e.eid}}</td>
+            <td>{{e.ename}}</td>
+            <td> {{e.empUsername}} </td>
+              <td> {{e.empPassword}} </td>
+              <td> {{e.mobNo}} </td>
+              <td>{{e.emailid}}  </td>
+              <td> {{e.role}}</td>
+              <td><a [routerLink]="['moreDetails',e.eid]" >show more details</a></td>
+             <!--    <td> 
+            <div>
+                {{e.localaddress.aid}}<br>
+                {{e.localaddress.areaname}}<br>
+                {{e.localaddress.cityname}}<br>
+                {{e.localaddress.pincode}}<br>
+                {{e.localaddress.district.districtname}}<br>
+                {{e.localaddress.district.state.statename}}<br>
+            </div>      
+            </td>
+              <td> 
+                <div>
+                    {{e.permanentaddress.aid}}<br>
+                    {{e.permanentaddress.areaname}}<br>
+                    {{e.permanentaddress.cityname}}<br>
+                    {{e.localaddress.pincode}}<br>
+                    {{e.permanentaddress.district.districtname}}<br>
+                    {{e.permanentaddress.district.state.statename}}<br>
+                </div>       
+            </td>
+
+            
+
+            <td> {{e.bankDetails.bankId}} </td>
+              <td> {{e.bankDetails.bankName}} </td>
+              <td> {{e.bankDetails.accountno}} </td>
+              <td> {{e.bankDetails.accounttype}} </td>
+              <td> {{e.bankDetails.ifscCode}} </td>
+              <td> {{e.bankDetails.micrCode}} </td>
+              
+               <td *ngFor="let b of e.bankDetails.branchId"> {{b.branchId}} </td>
+              <td *ngFor="let b of e.bankDetails.branchId"> {{b.branchName}} </td>
+              <td *ngFor="let b of e.bankDetails.branchId"> {{b.branchAddr}} </td>
+              <td *ngFor="let b of e.bankDetails.branchId"> {{b.branchCode}} </td>
+              
+            </tr> -->
+        </tbody>
+      </table>
+    </div> 
+  <div class='text-right'>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </div>
+  <router-outlet></router-outlet>
+  <br><br>
+
+  <div class="container">
+    <div class="header"> <h3><b>Dealer Details</b></h3>
+    </div>
+    
+      <table class="table table-success table-striped" style="width: 100%; " id="ddetails" >
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>DOB</th>
+          <th>EmailId</th>
+          <th>MobileNo</th>
+          <th>AdharNo</th>  
+          <th>Local Address</th>
+          <th>More Details</th>
+          <!-- <th>Permanent Address</th>       
+          <th>Bank Id</th>             
+          <th>Bank Name</th>
+          <th>Account No</th>          
+          <th>Account Type</th>         
+          <th>Ifsc Code</th>               
+          <th>Micr COde</th>             
+          <th>Branch Id</th>              
+          <th>Branch Name</th>
+          <th>Branch Address</th>          
+          <th>Branch Code</th>     -->
+          
+          
+      </tr>
+  </thead>
+  
+        <tbody>
+          <tr *ngFor='let d of dealerlist'>
+            <td>{{d.did}}</td>
+            <td>{{d.dname}}</td>
+            <td> {{d.dDob}} </td>
+              <td> {{d.demailId}} </td>
+              <td> {{d.dMobileno}} </td>
+              <td> {{d.dAdharNo}} </td>
+              <td>       
+                 <div>
+                         
+                   {{d.dLocalAddress.aid}}<br>                         
+                   {{d.dLocalAddress.areaname}}<br>                   
+                   {{d.dLocalAddress.cityname}}<br>                       
+                   {{d.dLocalAddress.pincode}}<br>                         
+                   {{d.dLocalAddress.district.districtname}}<br>            
+                   {{d.dLocalAddress.district.state.statename}}<br>
+                     
+                </div>                    
+              </td>
+              <td><a [routerLink]="['dealerDetails',d.did]">show more details</a></td>     
+              <!-- <td>                          
+              <div>
+                           
+                  {{d.dPermanentAddress.aid}}<br>                   
+                  {{d.dPermanentAddress.areaname}}<br>
+                  {{d.dPermanentAddress.cityname}}<br>                      
+                  {{d.dPermanentAddress.pincode}}<br>                      
+                  {{d.dPermanentAddress.district.districtname}}
+                  {{d.dPermanentAddress.district.state.statename}}<br>
+                     
+               </div>       
+                      
+              </td>
+                   
+               <td> {{d.dBankDetails.bankId}} </td>
+              <td> {{d.dBankDetails.bankName}} </td>
+              <td> {{d.dBankDetails.accountno}} </td>                      
+              <td> {{d.dBankDetails.accounttype}} </td>                      
+              <td> {{d.dBankDetails.ifscCode}} </td>                       
+              <td> {{d.dBankDetails.micrCode}} </td>
+                     
+            
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchId}} </td>
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchName}} </td>
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchAddr}} </td>
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchCode}} </td>      -->
+                 </tr> 
+                
+        </tbody>
+      </table>
+      <!-- <div class='text-right'>
+        <pagination-controls (pageChange)="p1=$event"></pagination-controls>                                    
+      </div> -->
+    </div> 
+    

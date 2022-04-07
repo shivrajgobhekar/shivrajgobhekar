@@ -1,0 +1,83 @@
+
+<div class="container">
+  <div class="header"> <h3><b>Dealer More Details</b></h3>
+  </div>
+   
+      <table class="table table-success table-striped" style="width: 100%; " id="details"  >
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>DOB</th>
+          <th>EmailId</th>
+          <th>MobileNo</th>
+          <th>AdharNo</th>  
+          <th>Local Address</th>
+          <th>Permanent Address</th>       
+          <th>Bank Id</th>             
+          <th>Bank Name</th>
+          <th>Account No</th>          
+          <th>Account Type</th>         
+          <th>Ifsc Code</th>               
+          <th>Micr COde</th>             
+          <th>Branch Id</th>              
+          <th>Branch Name</th>
+          <th>Branch Address</th>          
+          <th>Branch Code</th>    
+          
+          
+      </tr>
+  </thead>
+  
+        <tbody>
+          <tr >
+            <td>{{d.did}}</td>
+            <td>{{d.dname}}</td>
+            <td> {{d.dDob}} </td>
+              <td> {{d.demailId}} </td>
+              <td> {{d.dMobileno}} </td>
+              <td> {{d.dAdharNo}} </td>
+              <td>       
+                 <div>
+                         
+                   {{d.dLocalAddress.aid}}<br>                         
+                   {{d.dLocalAddress.areaname}}<br>                   
+                   {{d.dLocalAddress.cityname}}<br>                       
+                   {{d.dLocalAddress.pincode}}<br>                         
+                   {{d.dLocalAddress.district.districtname}}<br>            
+                   {{d.dLocalAddress.district.state.statename}}<br>
+                     
+                </div>                    
+              </td>   
+              <td>                          
+              <div>
+                           
+                  {{d.dPermanentAddress.aid}}<br>                   
+                  {{d.dPermanentAddress.areaname}}<br>
+                  {{d.dPermanentAddress.cityname}}<br>                      
+                  {{d.dPermanentAddress.pincode}}<br>                      
+                  {{d.dPermanentAddress.district.districtname}}
+                  {{d.dPermanentAddress.district.state.statename}}<br>
+                     
+               </div>       
+                      
+              </td>
+                   
+               <td> {{d.dBankDetails.bankId}} </td>
+              <td> {{d.dBankDetails.bankName}} </td>
+              <td> {{d.dBankDetails.accountno}} </td>                      
+              <td> {{d.dBankDetails.accounttype}} </td>                      
+              <td> {{d.dBankDetails.ifscCode}} </td>                       
+              <td> {{d.dBankDetails.micrCode}} </td>
+                     
+            
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchId}} </td>
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchName}} </td>
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchAddr}} </td>
+              <td *ngFor="let b of d.dBankDetails.branchId"> {{b.branchCode}} </td>     
+                 </tr> 
+                
+        </tbody>
+      </table>
+    </div> 
+    <p ><button (click)='getBack()'>Back</button></p>

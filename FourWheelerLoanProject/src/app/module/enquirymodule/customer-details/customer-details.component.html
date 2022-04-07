@@ -1,0 +1,64 @@
+
+<div class="header"> <h3><b>Customer More Details</b></h3>
+</div>
+<div class="container">
+    <table class="table table-success table-striped" style="width: 100%; " id="enquiry" >
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>MobileNo.</th>
+        <th>DOB</th>
+        <th>EmailId</th>
+         <th>Local Address</th>
+         <th>Permanent Address</th>
+        <th>Adhar No</th>
+        <th>PanNo</th>
+        <th>Occupation Id</th>
+        <th>Occupation Type</th>
+        <th>Occupation Discription</th>
+        <th>Yearly Income</th>
+        <th>Cibil Status</th> 
+    </tr>
+</thead>
+
+      <tbody>
+        <tr >
+          <td>{{customer.customerId}}</td>
+          <td>{{customer.cname}}</td>
+          <td> {{customer.mobileNo}} </td>
+          <td>{{customer.customerdob}}</td>
+          <td> {{customer.emailid}} </td>
+             <td> 
+            <div>
+                {{customer.localAddress.aid}}<br>
+                {{customer.localAddress.areaname}}<br>
+                {{customer.localAddress.cityname}}<br>
+                {{customer.localAddress.pincode}}<br>
+                {{customer.localAddress.district.districtname}}<br>
+                {{customer.localAddress.district.state.statename}}<br>
+            </div>      
+            </td>
+              <td> 
+                <div>
+                    {{customer.permanentAddress.aid}}<br>
+                    {{customer.permanentAddress.areaname}}<br>
+                    {{customer.permanentAddress.cityname}}<br>
+                    {{customer.permanentAddress.pincode}}<br>
+                    {{customer.permanentAddress.district.districtname}}<br>
+                    {{customer.permanentAddress.district.state.statename}}<br>
+                </div>       
+            </td>
+            <td> {{customer.adharNo}} </td>
+            <td> {{customer.panNo}} </td>
+            <td> {{customer.occupationId.occId}} </td>
+            <td> {{customer.occupationId.occType}} </td>
+            <td> {{customer.occupationId.occDiscription}} </td>
+            <td> {{customer.customerYearlyIncome}} </td>
+            <td> {{customer.cibilStatus}} </td> 
+          </tr>
+      </tbody>
+    </table>
+  </div> 
+
+  <p ><button (click)='getBack()'>Back</button></p>
